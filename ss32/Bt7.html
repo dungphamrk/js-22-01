@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bt4</title>
+  </head>
+  <body>
+    <script>
+            let listUser = [];
+      function validate_name(user_name) {
+        return user_name.length >= 3;
+      }
+
+      function validate_mail(mail) {
+        let email_regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return email_regex.test(mail);
+      }
+
+      function validate_password(password) {
+        return password.length >= 8;
+      }
+      let n = +prompt("nhap so luong nguoi dung");
+      for (let i = 0; i < n; i++) {
+        do {
+          var user = {
+            id: "",
+            user_name: "",
+            email: "",
+            password: "",
+          };
+          user.id = prompt("nhap id");
+          user.user_name = prompt("nhap ten");
+          user.email = prompt("nhap email");
+          user.password = prompt("nhap mat khau");
+        } while (
+            
+          !validate_user_name(user.user_name) ||
+          !validate_email(user.email) ||
+          !validate_password(user.password)
+        );
+        listUser.push(user);
+      }
+      console.log(listUser);
+    </script>
+  </body>
+</html>

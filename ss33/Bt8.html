@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bt8</title>
+</head>
+<body>
+    <script>
+        class employees{
+            constructor(name, age,wage){
+                this.name=name,
+                this.age=age,
+                this.wage=wage
+            }
+        }
+        function infor_listEmployees(listEmployees){
+            console.log(listEmployees);
+            return;
+        }
+        function create_employ(listEmployees){
+            let employ=new employees();
+            employ.name=prompt("Nhap ten nhan vien");
+            employ.age=+prompt("Nhap tuoi nhan vien");
+            employ.wage=+prompt("Nhap luong cua nhan vien")
+            listEmployees.push(employ);
+        }
+        let listEmployees=new Array();
+        function sortByAge(listEmployees) {
+            return listEmployees.sort((a, b) => a.age - b.age);
+    }
+        let choice=0;
+        do { 
+            choice=+prompt("Nhap lua chon cua ban");
+            switch (choice) {
+                case 1:
+                    create_employ(listEmployees);
+                    break;
+                case 2:
+                    infor_listEmployees(listEmployees);
+                    break;
+                case 3:
+                    sortByAge(listEmployees);
+                    infor_listEmployees(listEmployees);
+                    break;
+                case 4:
+                    let sum=0;
+                    for (const i in listEmployees) {
+                        sum+=listEmployees[i].wage;
+                    }
+                    console.log("tong luong cua toan bo cong ty la: ",sum);
+                    break;
+                case 5:
+                    break;
+                default:
+                    alert("vui long nhap tu 1 den 5")
+                    break;
+            }
+        } while (choice!=4)
+    </script>
+</body>
+</html>

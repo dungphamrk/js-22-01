@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bt5</title>
+  </head>
+  <body>
+    <script>
+            function book(name,author) {
+        this.name = name;
+        this.author = author;
+
+      }
+      var bookList = [
+          new book("time","dung"),
+          new book("time2","nam")
+      ];
+      let n=prompt("Ten tac gia muon tim ");
+      for(let key in bookList){
+          if(bookList[key].author===n){
+              console.log(bookList[key])
+          }
+      }
+    </script>
+  </body>
+</html>

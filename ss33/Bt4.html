@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bt4</title>
+        <style>
+      button {
+        width: 200px;
+        height: 100px;
+        color: blue;
+      }
+    </style>
+    </head>
+    <body>
+
+        <script>
+        class book{
+            constructor(title,author,published_year){
+                this.title=title,
+                this.author=author,
+                this.published_year=published_year
+            }
+            infor(books){
+                console.log(books);
+            }
+        }
+        class Library {
+            constructor() {
+                this.books = [];
+            }
+
+            add(book) {
+                this.books.push(book);
+            }
+
+            displayLibrary() {
+                if (this.books.length === 0) {
+                    console.log("ko co sach nao");
+                } else {
+                    this.books.forEach(book => {
+                    book.infor(book);
+                });
+                }
+            }
+        }   
+        let n=+prompt("so luong sach muon them")
+        let library = new Library();
+        for (let i = 0; i < n; i++) {
+            let books=new book();
+            books.title = prompt("nhap tieu de");
+            books.author = prompt("nhap tac gia");
+            books.published_year = prompt("nhap nam xuat ban");
+            library.add(books);
+            
+        }
+        library.displayLibrary();
+       
+      
+    </script>
+    </body>
+</html>

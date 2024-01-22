@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bt8</title>
+  </head>
+  <body>
+    <script>
+       let listUser = [];
+
+      function validate_name(user_name) {
+        return user_name.length >= 3;
+      }
+
+      function validate_email(mail) {
+        let email_regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return email_regex.test(mail);
+      }
+      function check_mail(mail, listUser) {
+        for (let key in listUser) {
+          if (listUser[key].email === mail) {
+
+            return false;
+          }
+        }
+        return true;
+      }
+      function validate_password(password) {
+        return password.length >= 8;
+      }
+      function logIn(email, password, listUser) {
+        for (let key in listUser) {
+          if (
+            listUser[key].email === email &&
+            listUser[key].password === password
+          ) {
+            console.log("Dang nhap thanh cong");
+            console.log(listUser[key]);
+            return;
+          }
+        }
+        console.log("Dang nhap ko thanh cong");
+        return;
+      }
+
+      do {
+        let n = +prompt("Nhap lua chon cua ban");
+        if (n === 1) {
+          do {
+            var user = {
+              id: "",
+              user_name: "",
+              email: "",
+              password: "",
+            };
+            user.id = prompt("nhap id");
+            user.user_name = prompt("nhap ten");
+            user.email = prompt("nhap email");
+            user.password = prompt("nhap mat khau");
+          } while (
+            !validate_name(user.user_name) ||
+            !validate_email(user.email) ||
+            !validate_password(user.password) ||
+            !check_mail(user.email, listUser)
+          );
+          listUser.push(user);
+        } else if (n === 2) {
+          let loginEmail = prompt("Nhap email");
+          let loginPass = prompt("Nhap mat khau");
+          logIn(loginEmail, loginPass, listUser);
+        } else if(n===3){
+            break;
+        }
+        else{
+          alert("Vui long chi lua chon 1,2 hoac 3");
+
+        }
+      } while (1);
+    </script>
+  </body>
+</html>

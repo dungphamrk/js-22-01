@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bt7</title>
+</head>
+<body>
+    <script>
+        class Bills{
+            constructor(id,date,sumValue){
+                this.id=id,
+                this.date=date,
+                this.sumValue=sumValue;
+            }
+        }
+        function infor_listBill(listBill){
+            console.log(listBill);
+            return;
+        }
+        function create_bill(listBill){
+            let bill=new Bills();
+            bill.id=prompt("Nhap so hoa don");
+            bill.date=prompt("Nhap ngay tao hoa don");
+            bill.sumValue=+prompt("Nhap tong gia tri");
+            listBill.push(bill);
+        }
+        let listBill=new Array();
+       let choice=0;
+        do { 
+            choice=+prompt("Nhap lua chon cua ban");
+            switch (choice) {
+                case 1:
+                    create_bill(listBill);
+                    break;
+                case 2:
+                    infor_listBill(listBill);
+                    break;
+                case 3:
+                    let sum=0;
+                    for (const key in listBill) {
+                       sum+=listBill[key].sumValue;
+                    }
+                    console.log(sum);
+                    break;
+                case 4:
+                    break;
+                default:
+                    alert("vui long nhap tu 1 den 4")
+                    break;
+            }
+        } while (choice!=4);
+    </script>
+</body>
+</html>

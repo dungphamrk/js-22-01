@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bt4</title>
+  </head>
+  <body>
+    <script>
+        function product(name,id,price,quantity) {
+        this.name = name;
+        this.id = id;
+        this.price=price;
+        this.quantity=quantity;
+      }
+      let n=+prompt("Nhap so luong san pham ");
+      var productList = [];
+      for(let i=0;i<n;i++){
+          let name = prompt(`Nhap ten cua san pham thu ${i+1}: ` );
+          let id =+prompt(`Nhap id cua san pham thu ${i+1}: `);
+          let price=+prompt(`Nhap gia cua san pham ${i+1}: `);
+          let quantity=prompt(`Nhap chat luong san pham thu ${i+1}: `);
+          let sanpham= new product(name,id,price,quantity);
+          productList.push(sanpham);
+      }
+      console.log(productList);
+    </script>
+  </body>
+</html>

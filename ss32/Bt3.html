@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bt3</title>
+  </head>
+  <body>
+    <script>
+        function student(name,id) {
+        this.name = name;
+        this.id = id;
+      }
+      let n=+prompt("Nhap so luong sing vien");
+      var studentList = [];
+      for(let i=0;i<n;i++){
+          let name = prompt("Nhap ten cua sinh vien thu",(i+1));
+          let id =+prompt("Nhap tuoi cua sinh vien thu",(i+1));
+          let person= new student(name,id);
+          studentList.push(person);
+      }
+      console.log(studentList);
+    </script>
+  </body>
+</html>

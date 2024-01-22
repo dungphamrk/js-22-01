@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(56, 56, 56);
+        }
+      button {
+        width: 200px;
+        height: 200px;
+        color: red;
+        background: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="add()">them sach</button>
+    <button onclick="checkBorow()">kiem tra sach</button>
+    <script>
+      let library = [];
+      class book{
+            constructor(title,author,published_year,condition){
+                this.title=title,
+                this.author=author,
+                this.published_year=published_year,
+                this.condition=condition
+            }
+            infor(books){
+                console.log(books);
+            }
+        }
+      function add() {
+        let Book=new book();
+        Book.title = prompt("nhap tieu de");
+        Book.author = prompt("nhap tac gia");
+        Book.published_year = prompt("nhap nam xuat ban");
+        Book.condition = +prompt("nhap trang thai");
+        library.push(Book);
+        
+      }
+      function checkBorrow() {
+        let name = prompt("nhap ten sach can tra cuu");
+        console.log(name);
+        for (let i = 0; i < library.length; i++) {
+          if (library[i].title === name&&library[i].condition === 0) {
+              console.log("co the muon dc");
+              return ;
+            }
+        }
+        console.log("khong the muon");
+      }
+    </script>
+  </body>
+</html>

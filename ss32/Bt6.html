@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bt6</title>
+  </head>
+  <body>
+    <script>
+	 function product(name,id,price) {
+        this.name = name;
+        this.id = id;
+        this.price=price;
+      }
+function sort(products) {
+    return products.sort((a, b) => a.price - b.price);
+    }
+var productList = [
+    new product("1","1",1000),
+    new product("2","2",2000),
+    new product("3","3",1500)
+];
+sort(productList);
+console.log(productList);
+
+
+    </script>
+  </body>
+</html>
